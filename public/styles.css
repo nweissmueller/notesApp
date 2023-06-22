@@ -1,0 +1,168 @@
+/* 
+NOTES APP STYLE SHEET CONTAINS CSS FOR HTML IDS, CLASSES, 
+USES FLEXBOX, AND DEFINES DYNAMIC MOBILE FREINDLY CSS AND
+ASSITIVE TECH ARIA LABEL CSS. 
+*/
+
+:root {
+  /* Set key design variables used throughout the CSS for maintainability */
+  --box-sizing: border-box;
+  --font-family: sans-serif;
+  --body-height: 100%;
+  --body-margin: 0;
+  --body-background: white;
+  --title-bar-background: black;
+  --title-bar-color: white;
+  --title-bar-height: 3em;
+  --side-bar-width: 25%;
+  --side-bar-border: 1px solid grey;
+  --side-bar-padding: 1em;
+  --new-note-btn-background: #f8d754;
+  --new-note-btn-active-background: #FBE49B;
+  --notes-list-margin-top: 2em;
+  --note-item-background: #f4f4f4;
+  --note-item-selected-background: lightgrey;
+  --note-item-selected-color: black;
+  --note-title-font-size: 2em;
+  --note-content-font-size: 1.2em;
+}
+
+/* Body, titlebar, and app container related CSS */
+*, ::before, ::after {
+  box-sizing: var(--box-sizing);
+  font-family: var(--font-family);
+}
+
+body, html {
+  height: var(--body-height);
+  margin: var(--body-margin);
+  background: var(--body-background);
+}
+
+#title-bar {
+  background-color: var(--title-bar-background);
+  color: var(--title-bar-color);
+  width: 100%;
+  height: var(--title-bar-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#title-bar h1,
+.new-note-btn {
+  margin: 0;
+  font-weight: bold;
+}
+
+#app-container {
+  display: flex;
+  height: 100%;
+}
+
+/* Sidebar related CSS */
+#side-bar {
+  width: var(--side-bar-width);
+  border-right: var(--side-bar-border);
+  padding: var(--side-bar-padding);
+  overflow-y: auto;
+}
+
+.new-note-btn {
+  display: block;  
+  width: 100%; 
+  background: var(--new-note-btn-background);
+  color: black;
+  padding: 1em 0.5em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  font-size: 1.5em;
+}
+
+.new-note-btn:active {
+  background-color: var(--new-note-btn-active-background);
+}
+
+.notes-list {
+  margin-top: var(--notes-list-margin-top);
+}
+
+/* Note related CSS */
+.note-item {
+  border-bottom: 1px solid var(--section-header-color);
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.note-item {
+  background-color: var(--note-item-background);
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.note-item.selected {
+  font-weight: bold;
+  background: var(--note-item-selected-background);
+  color: var(--note-item-selected-color);
+}
+
+#note-display {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2em;
+  background: white;  
+}
+
+.note-title, .note-content {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: white;
+}
+
+.note-title {
+  font-size: var(--note-title-font-size);
+  font-weight: bold;
+}
+
+.note-content {
+  flex-grow: 2;
+  resize: none;
+  font-size: var(--note-content-font-size);
+  overflow: auto;
+}
+
+/* CSS for Aria labels assitive tech */
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+  white-space: nowrap;
+}
+
+/* Make mobile friendly layout */
+@media (max-width: 600px) {
+  #app-container {
+    flex-direction: column;
+  }
+
+  #side-bar,
+  #note-display {
+    width: 100%;
+    overflow: auto;
+  }
+
+  #side-bar {
+    height: 30%;
+  }
+
+  #note-display {
+    height: 70%;
+  }
+}

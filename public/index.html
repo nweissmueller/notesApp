@@ -1,0 +1,33 @@
+<!-- FILE public/index.html: INCLUDES MOBILE FRIENDLY FEATURES and ARIA LABELS to broaden accessible to more users -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- This line provides funtionality to handle mobile layouts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SimpleNotes 🔥</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- This line provides automatic page and style reloading when files change -->
+    <script type="module" src="/lib/client/updater.js"></script>
+  </head>
+  <body>
+    <header id="title-bar" class="title-bar">
+      <h1>SimpleNotes 🔥</h1>
+    </header>
+    <main id="app-container" class="app-container">
+      <aside id="side-bar" class="side-bar" aria-label="Notes list">
+        <button class="new-note-btn">New Note</button>
+        <nav class="notes-list"></nav>
+      </aside>
+      <article id="note-display" class="note-display" aria-label="Note editor">
+        <header class="note-header">
+          <label for="note-title" class="visually-hidden">Note Title</label>
+          <input id="note-title" class="note-title" placeholder="Title" aria-label="Note Title" />
+        </header>
+        <label for="note-content" class="visually-hidden">Note Content</label>
+        <textarea id="note-content" class="note-content" placeholder="Text ..." aria-label="Note Content"></textarea>
+      </article>
+    </main>
+  </body>
+  <script type="module" src="index.js"></script>
+</html>

@@ -1,0 +1,60 @@
+CS193X Final Project Milestone
+==============================
+
+Project Title: Smart Notes
+Your Name: Nikolas Weissmueller
+Your SUNetID: nweissm
+
+Overview
+--------
+I have only started working on the project recently, after submitting assign3.2 this past weekend. So far, I have generated a first draft of the HTML. I have started to write pseudocode to map out the frontend and backend functionality. I am currently implementing the notes class (save, edit, delete). While local storage worked for testing some functionality, I am currently stuck on getting the connection with MongoDB set up, the API to talk to MongoDB, and the notes data structures defined. Lots of moving parts. I think I might first build the app using local storage, and then change the code for DB storage using the API, similar to assign3. I will try to fully separate HTML and JS, which might need an additional class and HTML template to copy, populate, and paste to the DOM, similar to assign2.
+
+
+Project Changes
+---------------
+For now, I am not planning to make any topic or scope changes. Still focusing on the Notes app, and as mentioned in the proposal, I reserve the option of not implementing the OpenAI aspect if time does not permit. Therefore, for now, scope and features are unchanged from my proposal.
+
+
+Implementation Details
+----------------------
+I will implement the HTML first, then create a simple CSS style layout to make viewing and testing a bit more intuitive. I plan to separate HTML and JS code completely, and let JS populate the HTML on the DOM. Therefore, an approach like assign2.1 and assign2.2 would work well. My plan for files (at the moment, subject to change) is:
+
+Frontend:
+public/index.html - defines the HTML layout and initial DOM, and notes HTML template
+public/styles.css - page styling for the DOM in index.html
+public/app.js - class to handle creating, adding, and displaying a new note 
+public/notes.js - class to define and handle note operations save, update, delete
+public/index.js - contains main() and instantiates the App and populates it with one example note
+
+Backend: 
+api/index.js - to instantiate MongoDB and define query routes (GET, POST, PATCH, DELETE)
+Will need to set up a MongoDB data structure for notes, containing note id, note title, note body, and note date/time. 
+
+So far, I have implemented index.html, and some simple style.css. I am currently working on getting the MongoDB set up and note data structure defined. I’m currently stuck on getting the DB and API to save and retrieve a single note, and I will probably post on Ed to ask.
+
+
+External libraries and code
+---------------------------
+Frontend:
+fetch API: For sending HTTP requests from the front-end to the back-end.
+OpenAI API: For generating the summary of notes' text.
+
+Backend (Node.js):
+Express.js: web framework for Node.js, used for setting up the server and handling HTTP requests.
+CORS (Cross-Origin Resource Sharing): Middleware used to enable CORS with various options.
+
+Database:
+MongoDB with Node.js to store and retrieve data
+
+Other:
+dotenv: To handle environment variables for OpenAI authentication
+Nodemon: For automatically restarting the node application
+
+
+Collaboration and resources
+---------------------------
+There are various online resources that discuss relevant functionality and similar applications that I might review to understand different design choices. 
+
+Anything else?
+--------------
+NA
