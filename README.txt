@@ -36,7 +36,6 @@ Accessibility: Aria-labels are included in HTML and have specific CSS to be hidd
 Collaboration and libraries
 ---------------------------
 I developed this project individually and without collaboration. 
-This project does not overlap with another project or coursework for another class.
 Libraries: Express is used for the backend server, MongoDB for the database, and JavaScript for frontend interactions.
-External code: I leveraged a few code chunks from my CS193X homework for api/index.js, public/index.js, and app.js.
+External code: I leveraged a few code chunks from my Stanford CS193X homework for api/index.js, public/index.js, and app.js.
 Inspiration: Some of the SimpleNotes app layout and functionality was inspired by Apple's `Notes` app.
