@@ -1,9 +1,3 @@
-CS193X Final Project
-====================
-Project Title: SimpleNotes
-Your Name: Nikolas Weissmueller
-Your SUNetID: 
-
 Overview
 --------
 SimpleNotes is a note-taking app that allows the user to create, update, and delete simple raw text notes. 
