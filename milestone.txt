@@ -1,9 +1,6 @@
 CS193X Final Project Milestone
 ==============================
-
 Project Title: Smart Notes
-Your Name: Nikolas Weissmueller
-Your SUNetID: nweissm
 
 Overview
 --------
